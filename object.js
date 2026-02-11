@@ -21,3 +21,5 @@ console.log(user) // { name: 'Luiz', greet: [Function: greet], lastName: 'Mirand
 // check if property exist
 console.log('name' in user) // true
 console.log('age' in user) // false
+
+obj.hasOwnProperty("name") // true
