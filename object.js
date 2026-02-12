@@ -2,7 +2,7 @@ const user = {
   name: "Luiz",
   age: 25,
   greet() {
-    return `Olá, ${this.name}`
+    return `Hello, ${this.name}`
   }
 }
 console.log(user) // { name: 'Luiz', age: 25, greet: [Function: greet] }
@@ -23,3 +23,27 @@ console.log('name' in user) // true
 console.log('age' in user) // false
 
 obj.hasOwnProperty("name") // true
+
+const key = "name";
+console.log(user[key]); // Luiz
+
+console.log(Object.keys(user));
+// ['name', 'greet', 'lastName']
+
+console.log(Object.values(user)); 
+// [ 'Luiz', 25, [Function: greet] ]
+
+console.log(Object.entries(user));
+// [ [ 'name', 'Luiz' ], [ 'age', 25 ], [ 'greet', [Function: greet] ] ]
+
+for (let [key, value] of Object.entries(user)) {
+  console.log(key, value);
+}
+// name Luiz
+// age 25
+// greet [Function: greet]
+
+const { name, lastName } = user;
+
+console.log(name);
+console.log(lastName);
